@@ -1,8 +1,23 @@
 
-.navbar {
-    height: 150px;
+header{
     border-bottom: 2px solid black;
+    width: 100%;
 }
 .titulo{
-    margin-left: 30em;
+    margin-left: 35em;
+    margin-right: 30em;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: black;
+}
+.navbar-brand{
+    margin-left: 2em;
+}
+.col-md-2{
+    background-color: red;
+}
+.col-md-8{
+    background-color: blue;
 }
