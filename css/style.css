@@ -1,23 +1,88 @@
-
-header{
-    border-bottom: 2px solid black;
-    width: 100%;
+body{
+ font-family: 'Titillium Web', sans-serif;   
 }
-.titulo{
-    margin-left: 35em;
-    margin-right: 30em;
+.navbar{
+    background-color: white;
+    min-height: 100px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
 }
-
-.nav-item a{
-    text-decoration: none;
+.nav-link{
     color: black;
 }
-.navbar-brand{
-    margin-left: 2em;
+.nav-link:hover{
+    color: black;
 }
-.col-md-2{
-    background-color: red;
+.navbar-toggler{
+    font-size: 30px;
 }
-.col-md-8{
-    background-color: blue;
+.title{
+    color: black;
+    font-size: 1em;
+    padding-left: 20px;
+    margin-top: 150px;
+}
+.logo{
+    min-width: 20px;
+    max-width: 40px;
+}
+#hero{
+    background-image: url('../img/portada.png');
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 700px;
+}
+
+.btn-outline-success{
+    color: black;
+    border-color: black;
+}
+.btn-outline-success:hover{
+    background-color: black;
+    color: white;
+}
+.bg-footer{
+    background-color: black !important;
+}
+footer{
+    text-align: center;
+    padding: 80px 0;
+    color: white;
+}
+.list-inline a{
+    color: white;
+    text-decoration: none;
+    padding-right: 25px;
+}
+.icon{
+    width: 60px;
+}
+#formulario{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 3px solid white;
+    border-radius:0 0 5px 5px;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    width: 300px;
+    text-align: center;
+}
+
+#formulario input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    width: 250px;
+    border-radius: 3px;
+}
+label :focus{
+    border: 3px solid yellow;
+}
+#login{
+    margin-left: 600px;
+    margin-top: 5em;
+}
+.btn-primary{
+    width: 250px;
 }
