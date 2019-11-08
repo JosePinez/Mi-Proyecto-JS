@@ -15,65 +15,131 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-  <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"  class="logo"><span class="title">Work&Coffe</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="icon ion-md-menu"></i>
-  </button>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" class="logo"><span
+          class="title">Work&Coffe</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="icon ion-md-menu"></i>
+      </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="inicio">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="sobre_nosotros">Sobre Nosotros</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#" id="contacto">Contacto</a>
-        </li>
-    </ul>
-  </div>
-</div>
-<form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-  </form>
-</nav>
-
-<section>
-  <div id="hero">
-    <div id="login" class="container">
-        <form  name="formulario" id="formulario">
-            <label id="labelUsu"><input type="text" name="usuario" id="usuario" placeholder="Usuario"></label>
-            <br>
-            <br>
-            <label for=""><input type="password" name="pass" id="pass" placeholder="Contraseña" ></label>
-            <br>
-            <br>
-            <button type="button" class="btn btn-primary">Login</button>
-            <br>
-            <br>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="sobre_nosotros">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-<footer class="bg-footer">
-  <div class="container">
-   <ul class="list-inline">
-     <li class="list-inline-item footer-menu"><a href="#">Inicio</a></li>
-     <li class="list-inline-item footer-menu"><a href="#">Sobre Nosotros</a></li>
-     <li class="list-inline-item footer-menu"><a href="#">Contacto</a></li>
-   </ul>
-   <ul class="list-inline">
-    <li class="list-inline-item footer-menu"><a href=""><i class="icon ion-logo-instagram"></i></a></li>
-    <li class="list-inline-item footer-menu"><a href=""><i class="icon ion-logo-twitter"></i></a></li>
-    <li class="list-inline-item footer-menu"><a href=""><i class="icon ion-logo-facebook"></i></a></li>
-    <li class="list-inline-item footer-menu"><a href=""><i class="icon ion-logo-youtube"></i></a></li>
-   </ul>
-   <small>&copy; Espacio creado por José Manuel Piñez - 2019</small>
-  </div>
-</footer>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </nav>
+
+  <section id="primeraPant">
+    <div id="hero" class="d-flex align-items-center">
+      <div id="login" class="container">
+        <form name="formulario" id="formulario">
+          <label id="labelUsu"><input type="text" name="usuario" id="usuario" placeholder="Usuario"></label>
+          <br>
+          <br>
+          <label for=""><input type="password" name="pass" id="pass" placeholder="Contraseña"></label>
+          <br>
+          <br>
+          <button type="button" class="btn btn-primary" onclick="segundaPantalla()">Login</button>
+          <br>
+          <br>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section id="segundaPant" class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <h5>Encuentra tu lugar</h5>
+        <div>
+            <form name="formulario" id="formularioBusqueda">
+                <label id=""><select name="Ciudad" placeholder="Ciudad">
+                    <option value="" disabled selected>Ciudad</option>
+                    <option>Sevilla</option>
+                    <option>Málaga</option>
+                    <option>Cádiz</option>
+                    </select>
+                  </label>
+                <br>
+                <br>
+                <label id=""><select name="Tipos" placeholder="Tipos">
+                    <option disabled selected>Tipos</option>
+                    <option>Particulares</option>
+                    <option>Locales</option>
+                    </select>
+                  </label>
+                <br>
+                <br>
+                <label for=""><input type="date" placeholder="Fecha"></label>
+                <br>
+                <br>
+                <label id=""><select name="Horario" value="Horarios" placeholder="Horarios">
+                    <option disabled selected>Horarios</option>
+                    <option></option>
+                    <option disabled>Horario de mañana</option>
+                    <option>09:00 - 10:00</option>
+                    <option>10:00 - 11:00</option>
+                    <option>11:00 - 12:00</option>
+                    <option>12:00 - 13:00</option>
+                    <option>13:00 - 14:00</option>
+                    <option disabled>Horario de tarde</option>
+                    <option>15:00 - 16:00</option>
+                    <option>16:00 - 17:00</option>
+                    <option>17:00 - 18:00</option>
+                    <option>18:00 - 19:00</option>
+                    <option>19:00 - 20:00</option>
+                    <option>20:00 - 21:00</option>
+                    <option>21:00 - 22:00</option>
+                    <option>22:00 - 23:00</option>
+                    </select>
+                  </label>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary" id="buscar">Buscar</button>
+              </form>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div id="tipos">
+          <span id="particulares"><a href="#">Particulares</a></span>
+          <span id="locales"><a href="#">Locales</a></span>
+        </div>
+      </div>
+      <div class="col-md-2">
+          <h5>Tus reservas</h5>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-footer">
+    <div class="container">
+      <ul class="list-inline">
+        <li class="list-inline-item footer-menu"><a href="#">Inicio</a></li>
+        <li class="list-inline-item footer-menu"><a href="#">Sobre Nosotros</a></li>
+        <li class="list-inline-item footer-menu"><a href="#">Contacto</a></li>
+      </ul>
+      <ul class="list-inline">
+        <li class="list-inline-item footer-menu"><a href=""><i class="icon ion-logo-instagram"></i></a></li>
+        <li class="list-inline-item footer-menu"><a href=""><i class="icon ion-logo-twitter"></i></a></li>
+        <li class="list-inline-item footer-menu"><a href=""><i class="icon ion-logo-facebook"></i></a></li>
+        <li class="list-inline-item footer-menu"><a href=""><i class="icon ion-logo-youtube"></i></a></li>
+      </ul>
+      <small>&copy; Espacio creado por José Manuel Piñez - 2019</small>
+    </div>
+  </footer>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -85,6 +151,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
