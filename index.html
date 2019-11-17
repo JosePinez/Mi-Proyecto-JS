@@ -15,10 +15,10 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg">
+  <nav id="nav" class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" class="logo"><span
-          class="title">Work&Coffe</span></a>
+          class="title">Work&Coffee</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="icon ion-md-menu"></i>
@@ -33,14 +33,14 @@
             <a class="nav-link" href="#" id="sobre_nosotros">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="contacto">Contacto</a>
+            <a class="nav-link" href="#" id="contactos">Contacto</a>
           </li>
         </ul>
       </div>
     </div>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Buscar</button>
     </form>
   </nav>
 
@@ -48,24 +48,24 @@
     <div id="hero" class="d-flex align-items-center">
       <div id="login" class="container">
         <form name="formulario" id="formulario">
-          <label id="labelUsu"><input type="text" name="usuario" id="usuario" placeholder="Usuario"></label>
-          <br>
-          <br>
-          <label for=""><input type="password" name="pass" id="pass" placeholder="Contraseña"></label>
-          <br>
-          <br>
-          <button type="button" class="btn btn-primary" onclick="validaUsuarios()">Login</button>
-          <br>
-          <br>
+          <label id="labelUsu"><input type="text" name="usuario" id="usuario" placeholder="Usuario">
+            <br>
+            <br>
+          </label>
+          <label id="labelPass"><input type="password" name="pass" id="pass" placeholder="Contraseña">
+            <br>
+            <br>
+          </label>
+          <button id=btnLogin type="button" class="btn btn-primary" onclick="validaUsuarios()">Login</button>
         </form>
       </div>
     </div>
   </section>
   <section id="segundaPant" class="container-fluid">
-    <div class="row">
-      <div class="col-md-2">
+    <div  class="row">
+      <div  class="col-md-2">
         <h5>Encuentra tu lugar</h5>
-        <div>
+        <div id="izq">
             <form name="formulario" id="formularioBusqueda">
                 <label id=""><select name="Ciudad" placeholder="Ciudad">
                     <option value="" disabled selected>Ciudad</option>
@@ -118,10 +118,53 @@
           <span id="particulares"><a href="#">Particulares</a></span>
           <span id="locales"><a href="#">Locales</a></span>
         </div>
+        <h4 id="novedades">Novedades</h4>
+        <div id="contenedor" class="row">
+
+        </div>
       </div>
       <div class="col-md-2">
           <h5>Tus reservas</h5>
       </div>
+    </div>
+  </section>
+  <section id="sobreNosotros">
+    <div id="tipos"class="col-md-12">
+      <h1>Sobre Nosotros</h1>
+    </div>
+    <p>
+      Work&Coffee nace en el año 2019 con la idea de llegar a todas esas personas que buscan el "coworking ocasional", ya sea en solitario
+      o en grupo. Ofrecemos a nuestros clientes un espacio de trabajo con la ayuda de todos nuestros colaboradores, tanto los que aportan sus
+      espacios personales, como aquellos establecimientos que ofrecen un espacio en su local para complacer tus servicios.
+      Ofrecemos la posibilidad de que nunca pierdas esa ambición por crecer en tu ámbito laboral mientras conoces personas con tus mismas
+      inquietudes. No lo dudes más y registrate con nosotros. ¡Estamos deseando que te unas a la familia de Work&Coffe!
+    </p>
+  </section>
+  <section id="contacto">
+    <div id="tipos" class="col-md-12">
+      <h1>Contacta con nosotros</h1>
+    </div>
+    <div id="formContacto" class="col-md-12">
+      <form name="formulario" id="formularioContacto">
+        <label><input type="text" name="Nombre" placeholder="Nombre">
+          </label>
+        <br>
+        <br>
+        <label id=""><input type="email" placeholder="Correo Electronico">
+          </label>
+        <br>
+        <br>
+        <label for=""><textarea rows="10" cols="50" placeholder="Mensaje"></textarea></label>
+        <br>
+        <br>
+        <button type="button" id="buscar" class="btn btn-primary">Enviar</button>
+        <span>
+          <ul id="contacta">
+            <li>Télefono: 955 - 955 - 955</li>
+            <li>E-mail: workandcoffe@gmail.com</li>
+          </ul>
+        </span>
+      </form>
     </div>
   </section>
   <footer class="bg-footer">

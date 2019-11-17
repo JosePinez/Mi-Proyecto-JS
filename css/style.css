@@ -119,7 +119,7 @@ h5{
     margin-bottom: 10px;
     box-shadow: 0 0.2px 0 0 slategray;
 }
-#formularioBusqueda{
+#formularioBusqueda, #formularioContacto{
     padding-top: 30px;
     padding-bottom: 30px;
     border: 2px solid slategray;
@@ -128,18 +128,72 @@ h5{
     margin: auto;
     margin-bottom: 20px;
 }
-#formularioBusqueda input, select, #buscar{
+#formularioBusqueda input, select{
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
-    width: 250px;
+    min-width: 180px;
+    max-width: 250px;
     border-radius: 3px;
     margin-left: 15px;
 }
-#buscar{
-    margin-top: 40px;
+#formularioContacto input,textarea{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+    margin-left: 15px;
 }
 
+ #buscar{
+    margin-left: 15px;
+    margin-top: 40px;
+    min-width: 180px;
+    max-width: 250px;
+    width: 180px;
+}
+#novedades{
+    text-align: center;
+}
+
+.establecimiento{
+    text-align: center;
+    background-color: white;
+    margin-bottom: 15px;
+    border-top: 2px solid slategrey;
+    border-bottom: 2px solid slategrey;
+}
+#establecimiento img{
+    margin: auto;
+    width: 200px;
+    height: 130px;
+    border: 0.5px solid slategray;
+    margin-top: 10px;
+}
+#izq p{
+    text-align: center;
+    border: 1px solid slategrey;
+    border-radius: 2px;
+}
+#sobreNosotros{
+    display: none;
+}
+#sobreNosotros p{
+    font-size: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    line-height: 65px;
+}
+#contacto{
+    display: none;
+}
+#contacta{
+    margin-top: 30px;
+    font-weight: bold;
+    color: slategrey;
+}
 
 
 

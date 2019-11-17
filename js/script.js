@@ -25,7 +25,7 @@ var users = [
 //CREACION DE CLASES
 "use strict";
 class EspacioAlquiler{
-    constructor(propietario,localizacion,tipo,precioHora, novedad){
+    constructor(propietario,localizacion,tipo,precioHora,novedad,ruta){
         this.propietario = propietario;
         this.localizacion = localizacion;
         this.tipo = tipo;
@@ -61,7 +61,7 @@ class EspacioAlquiler{
         this.precioHora = precioHora;
     }
 }
-var particular1 = new EspacioAlquiler("Jose Manuel Piñez","Sevilla","Particular",5.0,true);
+var particular1 = new EspacioAlquiler("Jose Manuel Piñez","Sevilla","Particular",5.0,true,"..img/1.jpg");
 var particular2 = new EspacioAlquiler("Abel Herrero","Sevilla","Particular",5.5,false);
 var particular3 = new EspacioAlquiler("Joaquin Bono","Sevilla","Particular",3.0,true);
 var particular4 = new EspacioAlquiler("Jose Bretones","Sevilla","Particular",4.5,true);
@@ -111,16 +111,56 @@ function validaUsuarios(){
     var pass = document.getElementById("pass").value;
     var usuarios = users;
     var usuarioEncontrado = false;
-    
-    for(var i=0;i<usuarios.length || ! usuarioEncontrado;i++){
+    var esAdmin = false;
+    for(var i=0;i<usuarios.length && ! usuarioEncontrado;i++){
         if(user === usuarios[i].usuario){
             if(pass === usuarios[i].pass){
                 usuarioEncontrado = true;
+                if(usuarios[i].admin == true){
+                        var button = document.createElement("button");
+                        var p=document.createElement("p");
+                        p.innerHTML="Opciones de administrador"
+                        $("#izq").appendChild(p);
+                        button.classList.add("btn");
+                        button.classList.add("btn-success");
+                        button.setAttribute("id","buscar")
+                        button.innerHTML= "Añadir";
+                        $("#izq").appendChild(button);
+                        var button = document.createElement("button");
+                        button.classList.add("btn");
+                        button.classList.add("btn-info");
+                        button.setAttribute("id","buscar")
+                        button.innerHTML= "Modificar";
+                        $("#izq").appendChild(button);
+                        var button = document.createElement("button");
+                        button.classList.add("btn");
+                        button.classList.add("btn-danger");
+                        button.setAttribute("id","buscar")
+                        button.innerHTML= "Eliminar";
+                        $("#izq").appendChild(button);
+                }
             }
         }
     }
     if(usuarioEncontrado){
-        segundaPantalla();
+        var formulario = document.getElementById("formulario");
+        var labelUsu = document.getElementById("labelUsu");
+        var labelPass = document.getElementById("labelPass");
+        var btnLogin = document.getElementById("btnLogin");
+        formulario.removeChild(labelUsu);
+        formulario.removeChild(labelPass);
+        formulario.removeChild(btnLogin);
+        var loading = document.createElement("div");
+        var span = document.createElement("span");
+        loading.classList.add("spinner-grow");
+        loading.classList.add("text-primary");
+        loading.setAttribute("id", "loading");
+        loading.setAttribute("role", "status");
+        loading.setAttribute("style", "width: 5em; height: 5em;");
+        span.classList.add("sr-only");
+        $("#formulario").appendChild(loading);
+        $("#loading").appendChild(span);
+        setTimeout('segundaPantalla()',2000);
     }else{
         alert("usuario o contraseña incorrectas");
         document.getElementById("usuario").value = "";
@@ -131,6 +171,63 @@ function validaUsuarios(){
 function segundaPantalla() {
     var primeraPant = document.getElementById("primeraPant");
     var segundaPant = document.getElementById("segundaPant");
+    var nosotros = document.getElementById("sobreNosotros");
+    var contacto = document.getElementById("contacto");
+    primeraPant.style.display = "none";
+    nosotros.style.display = "none";
+    contacto.style.display = "none";
+    segundaPant.style.display = "block";
+    for(i=0;i<arrayEspacios.length;i++){
+        if(arrayEspacios[i].novedad == true){
+            var establecimiento= document.createElement("div");
+            establecimiento.classList.add("col-md-4");
+            establecimiento.classList.add("establecimiento");
+            establecimiento.classList.add("establecimiento"+i);
+            establecimiento.setAttribute("id","establecimiento");
+            establecimiento.setAttribute("name","establecimiento");
+            $("#contenedor").appendChild(establecimiento);
+            establecimiento.innerHTML="<img src=img/1.jpg </img><br>"+"<b>Propietario:</b> "+arrayEspacios[i].propietario+"<br>"+"<b>Localización:</b> "+arrayEspacios[i].localizacion+"<br>"+"<b>Tipo:</b> "+arrayEspacios[i].tipo+"<br>"+"<b>Precio/Hora:</b> "+arrayEspacios[i].precioHora+"€"; 
+        }
+    }
+    var inicio = document.getElementById("inicio");
+    var nosotros = document.getElementById("sobre_nosotros");
+    var contacto = document.getElementById("contactos");
+    inicio.setAttribute("onclick","pantallaInicio()");
+    nosotros.setAttribute("onclick","sobreNosotros()");
+    contacto.setAttribute("onclick","contacto()");
+}
+function pantallaInicio(){
+    var login = document.getElementById("primeraPant");
+    var inicio = document.getElementById("segundaPant");
+    var nosotros = document.getElementById("sobreNosotros");
+    var contacto = document.getElementById("contacto");
+    contacto.style.display = "none";
     primeraPant.style.display = "none";
     segundaPant.style.display = "block";
+    nosotros.style.display = "none";
+}
+function sobreNosotros(){
+    var login = document.getElementById("primeraPant");
+    var inicio = document.getElementById("segundaPant");
+    var nosotros = document.getElementById("sobreNosotros");
+    var contacto = document.getElementById("contacto");
+    contacto.style.display = "none";
+    primeraPant.style.display = "none";
+    segundaPant.style.display = "none";
+    nosotros.style.display = "block";
+
+}
+function contacto(){
+    var login = document.getElementById("primeraPant");
+    var inicio = document.getElementById("segundaPant");
+    var nosotros = document.getElementById("sobreNosotros");
+    var contacto = document.getElementById("contacto");
+    contacto.style.display = "block";
+    primeraPant.style.display = "none";
+    segundaPant.style.display = "none";
+    nosotros.style.display = "none";
+}
+//FUNCION SELECTOR PARA AÑADIR Y BORRAR ELEMENTOS DEL HTML
+function $(selector) {
+    return document.querySelector(selector);
 }
