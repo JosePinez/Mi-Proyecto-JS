@@ -25,7 +25,8 @@ var users = [
 //CREACION DE CLASES
 "use strict";
 class EspacioAlquiler{
-    constructor(propietario,localizacion,tipo,precioHora,novedad,ruta){
+    constructor(id,propietario,localizacion,tipo,precioHora,novedad){
+        this.id = id;
         this.propietario = propietario;
         this.localizacion = localizacion;
         this.tipo = tipo;
@@ -61,26 +62,26 @@ class EspacioAlquiler{
         this.precioHora = precioHora;
     }
 }
-var particular1 = new EspacioAlquiler("Jose Manuel Piñez","Sevilla","Particular",5.0,true,"..img/1.jpg");
-var particular2 = new EspacioAlquiler("Abel Herrero","Sevilla","Particular",5.5,false);
-var particular3 = new EspacioAlquiler("Joaquin Bono","Sevilla","Particular",3.0,true);
-var particular4 = new EspacioAlquiler("Jose Bretones","Sevilla","Particular",4.5,true);
-var particular5 = new EspacioAlquiler("Cristina Jimenez","Sevilla","Particular",6.0,false);
-var particular6 = new EspacioAlquiler("Fernando Mateos","Sevilla","Particular",7.5,false);
-var particular7 = new EspacioAlquiler("Jose Manuel Piñez","Málaga","Particular",5.0,true);
-var particular8 = new EspacioAlquiler("Abel Herrero","Málaga","Particular",5.5,false);
-var particular9 = new EspacioAlquiler("Joaquin Bono","Málaga","Particular",3.0,true);
-var particular10 = new EspacioAlquiler("Jose Bretones","Cádiz","Particular",4.5,true);
-var particular11 = new EspacioAlquiler("Cristina Jimenez","Cádiz","Particular",6.0,false);
-var particular12 = new EspacioAlquiler("Fernando Mateos","Cádiz","Particular",7.5,false);
-var particular13 = new EspacioAlquiler("Pablo Picablo","Málaga","Particular",3.0,true);
-var local1 = new EspacioAlquiler("Jose Manuel Piñez","Sevilla","Local",10.0,true);
-var local2 = new EspacioAlquiler("Joaquin Bono","Sevilla","Local",10.5,true);
-var local3 = new EspacioAlquiler("Jose Bretones","Sevilla","Local",9.0,false);
-var local4 = new EspacioAlquiler("Cristina Jimenez","Cádiz","Local",11.0,true);
-var local5 = new EspacioAlquiler("Pablo Picablo","Málaga","Local",12.0,false);
-var local6 = new EspacioAlquiler("Javier Prada","Málaga","Local",10.0,true);
-var local7 = new EspacioAlquiler("Antonio Perez","Cádiz","Local",13.5,false);
+var particular1 = new EspacioAlquiler(1,"Jose Manuel Piñez","Sevilla","Particular",5.0,true,"..img/1.jpg");
+var particular2 = new EspacioAlquiler(2,"Abel Herrero","Sevilla","Particular",5.5,false);
+var particular3 = new EspacioAlquiler(3,"Joaquin Bono","Sevilla","Particular",3.0,true);
+var particular4 = new EspacioAlquiler(4,"Jose Bretones","Sevilla","Particular",4.5,true);
+var particular5 = new EspacioAlquiler(5,"Cristina Jimenez","Sevilla","Particular",6.0,false);
+var particular6 = new EspacioAlquiler(6,"Fernando Mateos","Sevilla","Particular",7.5,false);
+var particular7 = new EspacioAlquiler(7,"Jose Manuel Piñez","Málaga","Particular",5.0,true);
+var particular8 = new EspacioAlquiler(8,"Abel Herrero","Málaga","Particular",5.5,false);
+var particular9 = new EspacioAlquiler(9,"Joaquin Bono","Málaga","Particular",3.0,true);
+var particular10 = new EspacioAlquiler(10,"Jose Bretones","Cádiz","Particular",4.5,true);
+var particular11 = new EspacioAlquiler(11,"Cristina Jimenez","Cádiz","Particular",6.0,false);
+var particular12 = new EspacioAlquiler(12,"Fernando Mateos","Cádiz","Particular",7.5,false);
+var particular13 = new EspacioAlquiler(13,"Pablo Picablo","Málaga","Particular",3.0,true);
+var local1 = new EspacioAlquiler(14,"Jose Manuel Piñez","Sevilla","Local",10.0,true);
+var local2 = new EspacioAlquiler(15,"Joaquin Bono","Sevilla","Local",10.5,true);
+var local3 = new EspacioAlquiler(16,"Jose Bretones","Sevilla","Local",9.0,false);
+var local4 = new EspacioAlquiler(17,"Cristina Jimenez","Cádiz","Local",11.0,true);
+var local5 = new EspacioAlquiler(18,"Pablo Picablo","Málaga","Local",12.0,false);
+var local6 = new EspacioAlquiler(19,"Javier Prada","Málaga","Local",10.0,true);
+var local7 = new EspacioAlquiler(20,"Antonio Perez","Cádiz","Local",13.5,false);
 
 
 var arrayEspacios=[]
@@ -124,18 +125,21 @@ function validaUsuarios(){
                         button.classList.add("btn");
                         button.classList.add("btn-success");
                         button.setAttribute("id","buscar")
+                        button.setAttribute("onclick","añadir()");
                         button.innerHTML= "Añadir";
                         $("#izq").appendChild(button);
                         var button = document.createElement("button");
                         button.classList.add("btn");
                         button.classList.add("btn-info");
-                        button.setAttribute("id","buscar")
+                        button.setAttribute("id","buscar");
+                        button.setAttribute("onclick","modificar()");
                         button.innerHTML= "Modificar";
                         $("#izq").appendChild(button);
                         var button = document.createElement("button");
                         button.classList.add("btn");
                         button.classList.add("btn-danger");
-                        button.setAttribute("id","buscar")
+                        button.setAttribute("id","buscar");
+                        button.setAttribute("onclick","eliminar()");
                         button.innerHTML= "Eliminar";
                         $("#izq").appendChild(button);
                 }
@@ -186,7 +190,7 @@ function segundaPantalla() {
             establecimiento.setAttribute("id","establecimiento");
             establecimiento.setAttribute("name","establecimiento");
             $("#contenedor").appendChild(establecimiento);
-            establecimiento.innerHTML="<img src=img/1.jpg </img><br>"+"<b>Propietario:</b> "+arrayEspacios[i].propietario+"<br>"+"<b>Localización:</b> "+arrayEspacios[i].localizacion+"<br>"+"<b>Tipo:</b> "+arrayEspacios[i].tipo+"<br>"+"<b>Precio/Hora:</b> "+arrayEspacios[i].precioHora+"€"; 
+            establecimiento.innerHTML="<img src=img/1.jpg </img><br>"+"<br>"+"<b>Id: "+arrayEspacios[i].id+"<br>"+"<b>Propietario:</b> "+arrayEspacios[i].propietario+"<br>"+"<b>Localización:</b> "+arrayEspacios[i].localizacion+"<br>"+"<b>Tipo:</b> "+arrayEspacios[i].tipo+"<br>"+"<b>Precio/Hora:</b> "+arrayEspacios[i].precioHora+"€"; 
         }
     }
     var inicio = document.getElementById("inicio");
@@ -201,31 +205,107 @@ function pantallaInicio(){
     var inicio = document.getElementById("segundaPant");
     var nosotros = document.getElementById("sobreNosotros");
     var contacto = document.getElementById("contacto");
+    var añadir = document.getElementById("añadir");
+    var modificar = document.getElementById("modificar");
+    var eliminar = document.getElementById("eliminar");
     contacto.style.display = "none";
     primeraPant.style.display = "none";
     segundaPant.style.display = "block";
     nosotros.style.display = "none";
+    añadir.style.display = "none";
+    modificar.style.display = "none";
+    eliminar.style.display = "none";
 }
 function sobreNosotros(){
     var login = document.getElementById("primeraPant");
     var inicio = document.getElementById("segundaPant");
     var nosotros = document.getElementById("sobreNosotros");
     var contacto = document.getElementById("contacto");
+    var añadir = document.getElementById("añadir");
+    var modificar = document.getElementById("modificar");
+    var eliminar = document.getElementById("eliminar");
     contacto.style.display = "none";
     primeraPant.style.display = "none";
     segundaPant.style.display = "none";
     nosotros.style.display = "block";
-
+    añadir.style.display = "none";
+    modificar.style.display = "none";
+    eliminar.style.display = "none";    
 }
 function contacto(){
     var login = document.getElementById("primeraPant");
     var inicio = document.getElementById("segundaPant");
     var nosotros = document.getElementById("sobreNosotros");
     var contacto = document.getElementById("contacto");
+    var añadir = document.getElementById("añadir");
+    var modificar = document.getElementById("modificar");
+    var eliminar = document.getElementById("eliminar");
     contacto.style.display = "block";
     primeraPant.style.display = "none";
     segundaPant.style.display = "none";
     nosotros.style.display = "none";
+    añadir.style.display = "none";
+    modificar.style.display = "none";
+    eliminar.style.display = "none";
+}
+function añadir(){
+    var inicio = document.getElementById("segundaPant");
+    segundaPant.style.display = "none";
+    var añadir = document.getElementById("añadir");
+    añadir.style.display = "block"
+    if(añadido.style.display == "none"){
+        var divAñadir = document.getElementById("txtAñadir");
+        $("#formularioAñadir").removeChild(divAñadir);
+        añadido.style.display = "block";
+    }
+}
+function modificar(){
+    var inicio = document.getElementById("segundaPant");
+    segundaPant.style.display = "none";
+    var modificar = document.getElementById("modificar");
+    modificar.style.display = "block";
+    if(modificado.style.display == "none"){
+        var divModificar = document.getElementById("txtAñadir");
+        $("#formularioModificar").removeChild(divModificar);
+        modificado.style.display = "block";
+    }
+}
+function eliminar(){
+    var inicio = document.getElementById("segundaPant");
+    segundaPant.style.display = "none";
+    var eliminar = document.getElementById("eliminar");
+    eliminar.style.display = "block";
+    if(eliminado.style.display == "none"){
+        var divEliminar = document.getElementById("txtAñadir");
+        $("#formularioEliminar").removeChild(divEliminar);
+        eliminado.style.display = "block";
+    }
+}
+function añadeEspacio(){
+    var espacioNuevo = new EspacioAlquiler(arrayEspacios.length,document.getElementById("propietarioInput").value,document.getElementById("localizacionInput").value,document.getElementById("tipoInput").value,document.getElementById("precioInput").value,true);
+    arrayEspacios.push(espacioNuevo);
+    var añadido = document.getElementById("añadido");
+    añadido.style.display = "none";
+    var divAñadir = document.createElement("div");
+    divAñadir.setAttribute("id","txtAñadir");
+    divAñadir.innerHTML = "Espacio añadido correctamente. El ID asociado es: " + (arrayEspacios.length-1);
+    $("#formularioAñadir").appendChild(divAñadir);
+}
+function modificaEspacio(){
+    var modificado = document.getElementById("modificado");
+    modificado.style.display = "none";
+    var div = document.createElement("div");
+    div.setAttribute("id","txtAñadir");
+    div.innerHTML = "Espacio modificado correctamente ";
+    $("#formularioModificar").appendChild(div);
+}
+function eliminaEspacio(){
+    var eliminado = document.getElementById("eliminado");
+    eliminado.style.display = "none";
+    var div = document.createElement("div");
+    div.setAttribute("id","txtAñadir");
+    div.innerHTML = "Espacio eliminado correctamente";
+    $("#formularioEliminar").appendChild(div); 
 }
 //FUNCION SELECTOR PARA AÑADIR Y BORRAR ELEMENTOS DEL HTML
 function $(selector) {

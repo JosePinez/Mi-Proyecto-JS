@@ -119,7 +119,7 @@ h5{
     margin-bottom: 10px;
     box-shadow: 0 0.2px 0 0 slategray;
 }
-#formularioBusqueda, #formularioContacto{
+#formularioBusqueda, #formularioContacto, #formularioAñadir,#formularioModificar, #formularioEliminar{
     padding-top: 30px;
     padding-bottom: 30px;
     border: 2px solid slategray;
@@ -128,7 +128,7 @@ h5{
     margin: auto;
     margin-bottom: 20px;
 }
-#formularioBusqueda input, select{
+#formularioBusqueda input {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
@@ -137,7 +137,25 @@ h5{
     border-radius: 3px;
     margin-left: 15px;
 }
-#formularioContacto input,textarea{
+#formularioBusqueda select{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    min-width: 180px;
+    max-width: 250px;
+    border-radius: 3px;
+    margin-left: 15px;
+}
+#formularioContacto input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+    margin-left: 15px;
+}
+#formularioContacto textarea{
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
@@ -193,6 +211,58 @@ h5{
     margin-top: 30px;
     font-weight: bold;
     color: slategrey;
+}
+#añadir, #modificar, #eliminar{
+    display: none;
+}
+#formularioAñadir input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+    margin-left: 600px;
+}
+#formularioAñadir select{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+    margin-left: 600px;
+}
+#formularioModificar input,#formularioEliminar input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+    margin-left: 600px;
+}
+#formularioModificar select{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+    margin-left: 600px;
+}
+#btnAñadir{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+    margin-left: 600px;
+}
+#txtAñadir{
+    text-align: center;
+    font-size: 30px;
 }
 
 

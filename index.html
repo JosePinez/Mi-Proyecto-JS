@@ -167,6 +167,90 @@
       </form>
     </div>
   </section>
+  <section id="añadir">
+      <div id="tipos" class="col-md-12">
+          <h1>Añade tu espacio</h1>
+        </div>
+    <div class="col-md-12">
+      <form name="formulario" id="formularioAñadir">
+          <div id="añadido">
+        <label><input type="text" name="Propietario" id="propietarioInput" placeholder="Propietario">
+          </label>
+        <br>
+        <br>
+        <label id=""><input type="text" id="localizacionInput" placeholder="Localización">
+          </label>
+        <br>
+        <br>
+        <label for=""><select  placeholder="Tipo" id="tipoInput"></textarea>
+          <option disabled selected>Tipo</option>
+          <option>Particular</option>
+          <option>Local</option>
+        </select>
+      </label>
+      <br>
+      <br>
+      <label><input type="text" name="Precio/Hora" id="precioInput" placeholder="Precio/Hora">
+      </label>
+        <br>
+        <br>
+        <button type="button" id="btnAñadir" class="btn btn-primary" onclick="añadeEspacio()">Añadir</button>
+      </div>
+      </form>
+    </div>
+  </section>
+  <section id="modificar">
+      <div id="tipos" class="col-md-12">
+          <h1>Modifica tu espacio</h1>
+        </div>
+    <div class="col-md-12">
+      <form name="formulario" id="formularioModificar">
+          <div id="modificado">
+        <label><input type="text" name="id" id="idInput" placeholder="ID">
+          </label>
+        <br>
+        <br>
+        <label><input type="text" name="propietario" id="propietarioInput" placeholder="Propietario">
+        </label>
+      <br>
+      <br>
+        <label id=""><input type="text" id="localizacionInput" placeholder="Localización">
+          </label>
+        <br>
+        <br>
+        <label for=""><select  placeholder="Tipo" id="tipoInput"></textarea>
+          <option disabled selected>Tipo</option>
+          <option>Particular</option>
+          <option>Local</option>
+        </select>
+      </label>
+      <br>
+      <br>
+      <label><input type="text" name="Precio/Hora" id="precioInput" placeholder="Precio/Hora">
+      </label>
+        <br>
+        <br>
+        <button type="button" id="btnAñadir" class="btn btn-info" onclick="modificaEspacio()">Modificar</button>
+      </div>
+      </form>
+    </div>
+  </section>
+  <section id="eliminar">
+      <div id="tipos" class="col-md-12">
+          <h1>Elimina tu espacio</h1>
+        </div>
+    <div class="col-md-12">
+      <form name="formulario" id="formularioEliminar">
+          <div id="eliminado">
+        <label><input type="text" name="id" id="idInput" placeholder="ID">
+          </label>
+        <br>
+        <br>
+        <button type="button" id="btnAñadir" class="btn btn-danger" onclick="eliminaEspacio()">Eliminar</button>
+      </div>
+      </form>
+    </div>
+  </section>
   <footer class="bg-footer">
     <div class="container">
       <ul class="list-inline">
